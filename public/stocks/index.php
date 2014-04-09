@@ -16,13 +16,20 @@ function call($feed_url) {
 		return $xml;
 	}
 }
-try
-{
-	$feed_url = "http://webservice.enfoque.com.br/wsbancosantander/cotacoes.asmx/Tabela?Ativos=SANB3,DOLCOM,IBOV,SANB4,SANB11,BSBR&Login=BancoSantander&Senha=cotacoes2013";
-	//$feed_url = "http://services.int-meumobilesite.com/requests/sleep.php?delay=4"; // if timeout $http_response_header[0]=> HTTP/1.1 200 OK
-	//$feed_url = "http://services.int-meumobilesite.com/requests/500.php";
 
-	$xml = call($feed_url);
+function help() {
+	echo 'Following Actions are available:</br><ul>'
+		. '<li>enfoquify, using params:profile</li>'
+		. '<li>yahoofy, using params:codes</li>'
+		. '</ul>'
+		. 'Examples: </br>'
+		. '<a href="/stocks?action=yahoofy&codes=SANB11.SA,YHOO">/stocks?action=yahoofy&codes=SANB11.SA,YHOO</a></br>'
+		. '<a href="/stocks?action=enfoquify&profile=santander">/stocks?action=enfoquify&profile=santander</a>'
+		. '<br/></br>For a symbol quote Look Up check this link:</br>'
+		. '<a href="https://finance.yahoo.com/lookup">Symbol Look Up</a>';
+}
+
+function convertEnfoqueToYahoo($xml) {
 	$feed = simplexml_load_string($xml);
 	
 	foreach( $feed->Info as $quote ) {
@@ -37,20 +44,78 @@ try
 				"Volume" => (String)$quote->attributes()->DAY_VOLUME,
 			);
 	}
-
-	$results = array (
+	if (!empty($quotes)) {
+		$results = array (
 			"query" => array (
 				"results" => array (
 					"quotes" => $quotes
 				)
 			)
 		); 
+	} else {
+		$results = "Sorry, no quotes matching";
+	}
 
-	echo json_encode($results);
+	return json_encode($results);
 
 }
-catch( Exception $e ) 
-{ 
+
+function enfoquify($profile="santander") {
+
+	$BASE_URL = 'http://webservice.enfoque.com.br/wsbancosantander/cotacoes.asmx/Tabela';	
+	
+	$profiles['santander'] = array (
+		'login' => 'BancoSantander', 
+		'password' => 'cotacoes2013',
+		'codes' => 'SANB3,DOLCOM,IBOV,SANB4,SANB11,BSBR'
+	);
+
+	$feed_url = $BASE_URL . '?'
+		. 'Ativos=' . urlencode($profiles['santander']['codes'])
+		. '&Login=' . urlencode($profiles['santander']['login'])
+		. '&Senha=' . urlencode($profiles['santander']['password']);	
+
+	//echo $feed_url;
+
+	$xml = call($feed_url);
+	$json = convertEnfoqueToYahoo($xml);
+
+	echo $json;
+}
+
+function yahoofy() {
+	$BASE_URL = 'https://query.yahooapis.com/v1/public/yql';
+
+	if (isset($_GET['codes'])) {
+		// Form YQL query and build URI to YQL Web service
+		$codes = $_GET['codes'];
+		$yql_query = "select * from yahoo.finance.quotes where symbol in ('$codes')";
+		$yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) 
+			. "&format=json"
+			. "&env=http%3A%2F%2Fdatatables.org%2Falltables.env";
+		
+		$json = call($yql_query_url);
+	
+		echo $json;
+	} else {
+		throw new Exception("Codes are missing");
+	}
+}
+
+try {
+	$action = 'index';
+
+	if(isset($_GET['action'])) {
+		$action = $_GET['action'];
+	}
+	if(function_exists($action)) {
+		$action();
+	}
+	else {
+		help(); 
+	}
+	unset($_GET);
+} catch( Exception $e ) { 
 	echo $e->getMessage(); 
 } 
 ?>
