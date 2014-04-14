@@ -48,7 +48,7 @@ function convertEnfoqueToYahoo($xml) {
 		$results = array (
 			"query" => array (
 				"results" => array (
-					"quotes" => $quotes
+					"quote" => $quotes
 				)
 			)
 		); 
