@@ -1,13 +1,38 @@
 <?php 
+ini_set('display_errors', 'Off');
+require_once("../libs/phpfastcache/phpfastcache.php");
+phpFastCache::setup("storage","files");
+$cache = phpFastCache();
 
-function call($feed_url) {
+function slug($string) {
+	    return preg_replace(array('/[^a-z0-9]/', '/-{2,}/'), '-', strtolower($string));
+}
+
+function call($url) {
+	global $cache;
+	$urlKey = slug($url);
+	$response = null;
+	$errorMessage = '';
+	try {
+		$response = request($url);
+		$cache->set($urlKey, $response, 60 * 15);//15 minutes
+	} catch (Exception $e) {
+		$response = $cache->get($urlKey);
+		$errorMessage = $e->getMessage();
+	}
+	if ($response == null) {
+		throw new Exception($errorMessage);
+	}
+	return $response;
+}
+
+function request($feed_url) {
 	$opts = array("http" =>
 		array(
-			"timeout" => 3 // seconds
+			"timeout" => 1 // seconds
 		)
 	);
 	$context  = stream_context_create($opts);
-
 	if (!$xml = file_get_contents($feed_url, false, $context)) {
 		$error = error_get_last();
 		throw new Exception("Cannot access external stock service.</br>Error was: ".$error["message"]
