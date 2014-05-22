@@ -26,11 +26,11 @@ class StockService
 		} catch (Exception $e) {
 			$response = $this->cache->get($urlKey);
 			$errorMessage = $e->getMessage();
-			$this->logger->error('events update error', [                           
-				'exception' => get_class($e),                                       
-				'message' => $e->getMessage(),                                      
+			$this->logger->error('events update error', [
+				'exception' => get_class($e),
+				'message' => $e->getMessage(),
 				'trace' => $e->getTraceAsString()]);
-			$this->logger->info('use cached response: ' . $response ? 'yes': 'no'); 
+			$this->logger->info('using cached response: ' . ($response ? 'yes': 'no')); 
 		}
 		if ($response == null) {
 			throw new Exception($errorMessage);
