@@ -1,13 +1,15 @@
 <?php 
-require_once("../libs/phpfastcache/phpfastcache.php");
-
+require_once "../libs/phpfastcache/phpfastcache.php";
 class StockService
 {
 	protected $cache;
+	protected $logger;
 
 	public function __construct() {
 		phpFastCache::setup("storage","files");
 		$this->cache = phpFastCache();
+		$handler = new \Monolog\Handler\RotatingFileHandler(dirname(__DIR__).'/logs/stock.log');   
+		$this->logger = new \Monolog\Logger('services.stock', [$handler]); 
 	}
 
 	function slug($string) {
@@ -24,6 +26,11 @@ class StockService
 		} catch (Exception $e) {
 			$response = $this->cache->get($urlKey);
 			$errorMessage = $e->getMessage();
+			$this->logger->error('events update error', [                           
+				'exception' => get_class($e),                                       
+				'message' => $e->getMessage(),                                      
+				'trace' => $e->getTraceAsString()]);
+			$this->logger->info('use cached response: ' . $response ? 'yes': 'no'); 
 		}
 		if ($response == null) {
 			throw new Exception($errorMessage);
@@ -32,6 +39,7 @@ class StockService
 	}
 
 	function request($feed_url) {
+		$this->logger->addInfo('making request to: ', ['url' => $feed_url]);
 		$opts = array("http" =>
 			array(
 				"timeout" => 1 // seconds
@@ -130,12 +138,18 @@ class StockService
 	function run($action) {
 		try {
 			if($action && method_exists($this, $action)) {
+				$start_time = microtime(true);
+				$stats['action'] = $action;
+				$stats['parameters'] = $_GET;//TODO pass parameters to service instead get from GLOBAL $_GET
 				$this->$action();
+				$stats['elapsed_time'] = microtime(true) - $start_time;
+				$this->logger->info('finished stock action', $stats);
 			}	else {
 				$this->help(); 
 			}
 		} catch( Exception $e ) { 
 			header('HTTP/1.1 500 Internal Server Error');
+			$this->logger->error('service error: ' . $e->getMessage());
 			echo $e->getMessage(); 
 		}
 	}
