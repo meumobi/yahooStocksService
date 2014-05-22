@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+  <channel>
+    <title>Presentations</title>
+		<item>
+      <pubDate>Mon, 11 Mar 2014 17:30:00 GMT</pubDate>
+			<title>2013 Analyst Presentation</title>
+      <media:content url="http://www.angloplatinum.com/investors/reports/ar_13/AAP_AR_2013.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>2013 Analyst Presentation</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Thu, 20 Jun 2013 17:30:00 GMT</pubDate>
+			<title>Driving value understanding the potential
+Investor Presentation</title>
+      <media:content url="http://www.angloplatinum.com/investors/presentations/documents/driving_value_2013/investor-day_dec_10_presentation.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Driving value understanding the potential
+Investor Presentation</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Fri, 08 Nov 2013 17:30:00 GMT</pubDate>
+			<title>2012 Financial statement, commentary and presentation</title>
+      <media:content url="http://www.angloplatinum.com/pdf/2013/2012_financial_statements_commentary_presentation.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>2012 Financial statement, commentary and presentation</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Sat, 22 Mar 2013 17:30:00 GMT</pubDate>
+			<title>2011 Interim Results for the half year ended 25 July 2011</title>
+      <media:content url="http://www.angloplatinum.com/investors/presentations/documents/interim_july2011/2011_results_presentation.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>2011 Interim Results for the half year ended 25 July 2011</media:title>
+      </media:content>
+    </item>
+  </channel>
+</rss>

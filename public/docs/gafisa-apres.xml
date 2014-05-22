@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:media="http://search.yahoo.com/mrss/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apresentações</title>
+		<description>Apresentações</description>
+		<link>http://triunfo.riweb.com.br</link>
+		<atom:link href="http://services.int-meumobilesite.com/gafisa-apres.xml" rel="self" type="application/rss+xml" />
+		<item>
+      <pubDate>Mon, 11 Mar 2013 17:30:00 GMT</pubDate>
+			<title>Gafisa Investor Day</title>
+      <media:content url="http://gafisa.riweb.com.br/ShowApresentacao.aspx?idCanal=K5KOjk5x3zUjS7cwZKOlMA==&IdTeleconferencia=NAZZyslGLlxkKkjfJBUjMw==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Gafisa Investor Day</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Thu, 20 Jun 2013 17:30:00 GMT</pubDate>
+			<title>Apresentação Corporativa</title>
+      <media:content url="http://gafisa.riweb.com.br/ShowApresentacao.aspx?idCanal=K5KOjk5x3zUjS7cwZKOlMA==&IdTeleconferencia=VqhHP14MFGOaFp9diL8/lg==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Apresentação Corporativa</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Fri, 08 Nov 2013 17:30:00 GMT</pubDate>
+			<title>Itaú BBA - Real Estate Day (Entendendo as empresas de Loteamento) Alphaville</title>
+      <media:content url="http://gafisa.riweb.com.br/ShowApresentacao.aspx?idCanal=K5KOjk5x3zUjS7cwZKOlMA==&IdTeleconferencia=0vhxQTFzEw+ihYbYcXleLg==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Itaú BBA - Real Estate Day (Entendendo as empresas de Loteamento) Alphaville</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Fri, 22 Mar 2013 17:30:00 GMT</pubDate>
+			<title>Reunião Apimec com analistas e investidores</title>
+      <media:content url="http://gafisa.riweb.com.br/ShowApresentacao.aspx?idCanal=K5KOjk5x3zUjS7cwZKOlMA==&IdTeleconferencia=MxYrEV5EAtPE2fclE8GG3w==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Reunião Apimec com analistas e investidores</media:title>
+      </media:content>
+    </item>
+  </channel>
+</rss>

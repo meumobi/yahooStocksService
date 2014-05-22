@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+  <channel>
+    <title>Resultados Trimestrais</title>
+		<item>
+      <pubDate>Mon, 30 Mar 2014 17:30:00 GMT</pubDate>
+			<title>Resultados Trimestrais 1º Trimestre de 2014</title>
+      <media:content url="http://www.duratex.com.br/ri/pt/Download/1608_Fact_Sheet_1T14.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Resultados do 1º Trimestre de 2014</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Thu, 20 Jun 2013 17:30:00 GMT</pubDate>
+			<title>Resultados Trimestrais 4º Trimestre de 2013</title>
+      <media:content url="http://www.duratex.com.br/ri/pt/Download/1569_Fact_Sheet_4T13.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Resultados Trimestrais 4º Trimestre de 2013</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Fri, 08 Nov 2013 17:30:00 GMT</pubDate>
+			<title>Resultados Trimestrais 3º Trimestre de 2013</title>
+      <media:content url="http://www.duratex.com.br/ri/pt/Download/1528_FactSheet_3T13.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Resultados Trimestrais 3º Trimestre de 2013</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Sat, 22 Mar 2013 17:30:00 GMT</pubDate>
+			<title>Resultados Trimestrais 2º Trimestre de 2013</title>
+      <media:content url="http://www.duratex.com.br/ri/pt/Download/1479_FactSheet_2T13.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Resultados Trimestrais 2º Trimestre de 2013</media:title>
+      </media:content>
+    </item>
+  </channel>
+</rss>

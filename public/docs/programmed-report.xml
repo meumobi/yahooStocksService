@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+  <channel>
+    <title>Annual Reports</title>
+		<item>
+      <pubDate>Mon, 11 Mar 2014 17:30:00 GMT</pubDate>
+			<title>Annual Report 2013</title>
+      <media:content url="http://www.programmed.com.au/images/PDF/ASX/2013/May/2.%20Programmed%202013%20Annual%20Report.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Annual Report 2013</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Thu, 20 Jun 2013 17:30:00 GMT</pubDate>
+			<title>Annual Report 2012</title>
+      <media:content url="http://www.programmed.com.au/images/PDF/Annual_Reports/2012/0.%20annual%20report%202012.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Annual Report 2012</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Fri, 08 Nov 2013 17:30:00 GMT</pubDate>
+			<title>Annual Report 2011</title>
+      <media:content url="http://www.programmed.com.au/images/PDF/Annual_Reports/2011/annual%20report%202011.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Annual Report 2011</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Sat, 22 Mar 2013 17:30:00 GMT</pubDate>
+			<title>Annual Report 2010</title>
+      <media:content url="http://www.programmed.com.au/images/PDF/Annual_Reports/2010/prg%202010%20annual%20report.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Annual Report 2010</media:title>
+      </media:content>
+    </item>
+    <item>
+      <pubDate>Sat, 22 Mar 2013 17:30:00 GMT</pubDate>
+			<title>Annual Report 2009</title>
+      <media:content url="http://www.programmed.com.au/images/PDF/Annual_Reports/2009/Annual%20Report%202009.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Annual Report 2009</media:title>
+      </media:content>
+    </item>
+<item>
+      <pubDate>Sat, 22 Mar 2013 17:30:00 GMT</pubDate>
+			<title>Annual Report 2008</title>
+      <media:content url="http://www.programmed.com.au/images/PDF/Annual_Reports/2009/Annual%20Report%202009.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Annual Report 2008</media:title>
+      </media:content>
+    </item>
+    <item>
+      <pubDate>Sat, 22 Mar 2013 17:30:00 GMT</pubDate>
+			<title>Annual Report 2007</title>
+      <media:content url="http://www.programmed.com.au/images/PDF/Annual_Reports/2009/Annual%20Report%202009.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Annual Report 2007</media:title>
+      </media:content>
+    </item>
+  </channel>
+</rss>

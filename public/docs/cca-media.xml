@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+  <channel>
+    <title>Media Releases</title>
+		<item>
+      <pubDate>Mon, 11 Mar 2014 17:30:00 GMT</pubDate>
+			<title>SPC Traffic Assessment</title>
+      <media:content url="http://ccamatil.com/InvestorRelations/md/2014/Media%20release_SPC%20Traffic%20Assessment.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>SPC Traffic Assessment</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Thu, 20 Jun 2013 17:30:00 GMT</pubDate>
+			<title>Fiji Bounty Rum judged best in the world</title>
+      <media:content url="http://ccamatil.com/InvestorRelations/md/2014/FIJI%20BOUNTY%20RUM%20%20JUDGED%20BEST%20%20IN%20THE%20WORLD.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Fiji Bounty Rum judged best in the world</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Fri, 08 Nov 2013 17:30:00 GMT</pubDate>
+			<title>New Woolworrth and SPC partnership</title>
+      <media:content url="http://ccamatil.com/InvestorRelations/md/2014/MR_New%20Woolworth%20and%20SPC%20partnership%20a%20win%20for%20industry%20and%20Aussie%20growers_F.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>New Woolworrth and SPC partnership</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Sat, 22 Mar 2013 17:30:00 GMT</pubDate>
+			<title>Alison Watkins - Group Managing Director, CCA</title>
+      <media:content url="http://ccamatil.com/InvestorRelations/md/2014/Alison%20Watkins%20Media%20Release.pdf" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Alison Watkins - Group Managing Director, CCA</media:title>
+      </media:content>
+    </item>
+  </channel>
+</rss>

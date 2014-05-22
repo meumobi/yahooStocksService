@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:media="http://search.yahoo.com/mrss/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Relatorios Anuais</title>
+		<description>Relatorios Anuais</description>
+		<link>http://triunfo.riweb.com.br</link>
+		<atom:link href="http://services.int-meumobilesite.com/triunfo-relatorios.xml" rel="self" type="application/rss+xml" />
+		<item>
+      <pubDate>Mon, 11 Mar 2013 17:30:00 GMT</pubDate>
+			<title>Demostrações Financeiras 2013</title>
+      <media:content url="http://triunfo.riweb.com.br/Download.aspx?Arquivo=/i4YGXOM4E/sQ8x6O50M8Q==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Demostrações Financeiras 2013</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Thu, 20 Jun 2013 17:30:00 GMT</pubDate>
+			<title>Relatório de Sustentabilidade 2012</title>
+      <media:content url="http://triunfo.riweb.com.br/Download.aspx?Arquivo=G4s6scRVguStE9KoknuPdw==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Relatório de Sustentabilidade 2012</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Fri, 08 Nov 2013 17:30:00 GMT</pubDate>
+			<title>DFP 2012</title>
+      <media:content url="http://triunfo.riweb.com.br/Download.aspx?Arquivo=Zdl9DsjlYE3RCHlb0XIpLw==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>DFP 2012</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Fri, 22 Mar 2013 17:30:00 GMT</pubDate>
+			<title>Demonstrações Financeiras 2012</title>
+      <media:content url="http://triunfo.riweb.com.br/Download.aspx?Arquivo=Hr1J1q9hazzaSgf/n34WeQ==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Demonstrações Financeiras 2012</media:title>
+      </media:content>
+    </item>
+  </channel>
+</rss>

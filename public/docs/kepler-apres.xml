@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:media="http://search.yahoo.com/mrss/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apresentações</title>
+		<description>Apresentações</description>
+		<link>http://ri.kepler.com.br</link>
+		<atom:link href="http://services.int-meumobilesite.com/kepler-apres.xml" rel="self" type="application/rss+xml" />
+		<item>
+      <pubDate>Mon, 11 Mar 2013 17:30:00 GMT</pubDate>
+			<title>Apresentação Super Apimec SP</title>
+      <media:content url="http://ri.kepler.com.br/Download.aspx?Arquivo=QbqEvcDShHlNLfP58r+2og==&IdCanal=46DhRShLCtOm3vrgmnYe1g==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Apresentação Super Apimec SP4</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Thu, 20 Jun 2013 17:30:00 GMT</pubDate>
+			<title>Apresentação Webconference 2012</title>
+      <media:content url="http://ri.kepler.com.br/ShowApresentacao.aspx?IdTeleconferencia=K+wFND+6krussU469fPPxw==&IdCanal=46DhRShLCtOm3vrgmnYe1g==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Apresentação Webconference 2012</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Fri, 08 Nov 2013 17:30:00 GMT</pubDate>
+			<title>Apresentação APIMEC RIO – Resultados 2T12</title>
+      <media:content url="http://ri.kepler.com.br/ShowApresentacao.aspx?IdTeleconferencia=iwwAI7k/yUF3khdJLwQDiA==&IdCanal=46DhRShLCtOm3vrgmnYe1g==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Apresentação APIMEC RIO – Resultados 2T12</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Fri, 22 Mar 2013 17:30:00 GMT</pubDate>
+			<title>Apresentação Webconference 2011</title>
+      <media:content url="http://ri.kepler.com.br/Download.aspx?Arquivo=znW1UfAsphS9zh6a+BrzlA==&IdCanal=46DhRShLCtOm3vrgmnYe1g==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Apresentação Webconference 2011</media:title>
+      </media:content>
+    </item>
+  </channel>
+</rss>

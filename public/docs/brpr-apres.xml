@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:media="http://search.yahoo.com/mrss/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apresentações</title>
+		<description>Apresentações</description>
+		<link>http://brproperties.riweb.com.br/RI/</link>
+		<atom:link href="http://services.int-meumobilesite.com/brpr-apres.xml" rel="self" type="application/rss+xml" />
+		<item>
+      <pubDate>Mon, 11 Mar 2013 17:30:00 GMT</pubDate>
+			<title>Apresentação - Reunião APIMEC 2013</title>
+      <media:content url="http://brproperties.riweb.com.br/RI/Download.aspx?Arquivo=mcg1Fd1AmyByYiuzqd9tEA==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Apresentação - Reunião APIMEC 2013</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Thu, 20 Jun 2013 17:30:00 GMT</pubDate>
+			<title>Apresentação - Propriedades FII</title>
+      <media:content url="http://brproperties.riweb.com.br/RI/Download.aspx?Arquivo=+Ugq3G4E69YUlbSUxaNVyQ==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Apresentação - Propriedades FII</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Fri, 08 Nov 2013 17:30:00 GMT</pubDate>
+			<title>Apresentação do Portfólio - Agosto 2013</title>
+      <media:content url="http://brproperties.riweb.com.br/RI/Download.aspx?Arquivo=dCxIlz98j/LScZ0UCGKWPg==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Apresentação do Portfólio - Agosto 2013</media:title>
+      </media:content>
+    </item>
+		<item>
+      <pubDate>Fri, 22 Mar 2013 17:30:00 GMT</pubDate>
+			<title>Apresentação Institucional - Agosto de 2013</title>
+      <media:content url="http://brproperties.riweb.com.br/RI/Download.aspx?Arquivo=uqgp2Qo0Y6inCvlKu2biZA==" fileSize="2031" type="application/pdf" medium="document">
+        <media:title>Apresentação Institucional - Agosto de 2013</media:title>
+      </media:content>
+    </item>
+  </channel>
+</rss>
