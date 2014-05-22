@@ -102,7 +102,7 @@ class StockService
 		$profiles['santander'] = array (
 			'login' => 'BancoSantander', 
 			'password' => 'cotacoes2013',
-			'codes' => 'SANB3,DOLCOM,IBOV,SANB4,SANB11,BSBR'
+			'codes' => 'SANB11,SANB3,SANB4,BSBR,DOLCOM,IBOV'
 		);
 
 		$feed_url = $BASE_URL . '?'
