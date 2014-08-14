@@ -1,7 +1,6 @@
 <?php
-require_once '../vendor/autoload.php';
-require_once "../libs/phpfastcache/phpfastcache.php";
-require_once '../services/StockService.php';
+require_once dirname(dirname(__DIR__)) . '/config/bootstrap.php';
+require_once 'services/StockService.php';
 
 ini_set('display_errors', 'Off');
 

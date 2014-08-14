@@ -1,5 +1,4 @@
 <?php 
-require_once "../libs/phpfastcache/phpfastcache.php";
 class StockService
 {
 	protected $cache;
