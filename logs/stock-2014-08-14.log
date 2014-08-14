@@ -1,2 +1,0 @@
-[2014-08-14 09:35:39] services.stock.INFO: making request to:  {"url":"https://query.yahooapis.com/v1/public/yql?q=select+%2A+from+yahoo.finance.quotes+where+symbol+in+%28%27SANB11.SA%27%29&format=json&env=http%3A%2F%2Fdatatables.org%2Falltables.env"} []
-[2014-08-14 09:35:39] services.stock.INFO: finished stock action {"action":"yahoofy","parameters":{"action":"yahoofy","codes":"SANB11.SA"},"elapsed_time":0.64433002471924} []

@@ -4,10 +4,13 @@ class Service
 	protected $cache;
 	protected $logger;
 	protected $logPath = '/logs/stock.log';
-	protected $cacheTime = 900;	//15 minutes
+	protected $cacheTime = CACHE_TIME;
 
 	public function __construct() {
-		phpFastCache::setup("storage","files");
+		phpFastCache::setup([
+			"storage" => "files",
+			"path" => CACHE_PATH
+		]);
 		$this->cache = phpFastCache();
 		$handler = new \Monolog\Handler\RotatingFileHandler(dirname(__DIR__) . $this->logPath);   
 		$this->logger = new \Monolog\Logger(__CLASS__, [$handler]); 
