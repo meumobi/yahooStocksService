@@ -22,19 +22,22 @@ class Service
 
 	function call($url) {
 		$urlKey = $this->slug($url);
-		if ($response = $this->cache->get($urlKey))
-			return $response;
-		try {
-			$response = $this->request($url);
-			$this->cache->set($urlKey, $response, $this->cacheTime);
-		} catch (Exception $e) {
-			$errorMessage = $e->getMessage();
-			$this->logger->error('request error', [
-				'exception' => get_class($e),
-				'message' => $e->getMessage(),
-				'trace' => $e->getTraceAsString()]);
-			$this->logger->info('using cached response: ' . ($response ? 'yes': 'no')); 
+		$cached = true;
+		if (!$response = $this->cache->get($urlKey)) {
+			try {
+				$response = $this->request($url);
+				$cached = false;
+				$this->cache->set($urlKey, $response, $this->cacheTime);
+			} catch (Exception $e) {
+				$errorMessage = $e->getMessage();
+				$this->logger->error('request error', [
+					'exception' => get_class($e),
+					'message' => $e->getMessage(),
+					'trace' => $e->getTraceAsString()]);
+			}
 		}
+
+		$this->logger->info('using cached response: ' . ($cached ? 'yes': 'no')); 
 		return $response;
 	}
 
@@ -42,7 +45,7 @@ class Service
 		$this->logger->addInfo('making request to: ', ['url' => $feed_url]);
 		$opts = array("http" =>
 			array(
-				"timeout" => 10 // seconds
+				"timeout" => 0 // seconds
 			)
 		);
 		$context  = stream_context_create($opts);

@@ -4,7 +4,6 @@ require_once "Service.php";
 class RedirectService extends Service
 {
 	protected $logPath = '/logs/redirect.log';
-	protected $cacheTime = 259200;	//3 days in seconds
 
 	public function run($url, $domain) {
 		try {
@@ -13,11 +12,11 @@ class RedirectService extends Service
 				$stats['parameters'] = compact('url', 'domain');
 				$this->redirectToItem($url, $domain);
 				$stats['elapsed_time'] = microtime(true) - $start_time;
-				$this->logger->info('finished stock action', $stats);
+				$this->logger->info('finished redirect', $stats);
 				exit;
 			}
 		} catch( Exception $e ) { 
-			$this->logger->error('service error: ' . $e->getMessage());
+			$this->logger->error($e->getMessage());
 		}
 		header("Location: $url");
 	}
@@ -29,7 +28,7 @@ class RedirectService extends Service
 			$item = reset(reset($items));
 			header("Location: http://$domain#/items/{$item->_id}");
 		} else {
-			throw new Exception("Can't find item for url: $url");
+			throw new Exception("can't find item for url: $url");
 		}
 	}
 }
