@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors', 'On');
+require_once 'services/RedirectService.php'; //TODO use autoload
 
 $environment = getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'prod';
 
@@ -17,3 +17,4 @@ switch ($environment) {
 }
 
 define('SITE_BUILDER', $sitebuilder);
+ini_set('display_errors', 'On');
