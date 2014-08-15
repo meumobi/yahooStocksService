@@ -125,5 +125,20 @@
 			<wfw:commentRss>http://www.180back.com/surf/news-surf/fanning-simpose-sur-le-j-bay-open-2014-videos-et-resultats-16141/feed/</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
+    <item>
+      <title>excel and audio as media:content</title>
+      <media:content url="http://www.ri.santander.com.br/download.aspx?Arquivo=oZyOmaJ0ZrkyFAlrl3jVTQ==" fileSize="618" type="application/vnd.ms-excel" medium="document">
+        <media:title>BR GAAP - 2T14 - Séries Históricas </media:title>
+      </media:content>
+      <media:content url="http://www.ri.santander.com.br/download.aspx?Arquivo=mbK33WrlHUwcF+sdPD6K/g==" fileSize="18205" type="audio/mpeg" medium="audio">
+        <media:title>audios_2T14_santander_por_2t14</media:title>
+      </media:content>
+      <guid isPermaLink="true">http://ri.santander.com.br/ShowResultado.aspx?IdResultado=IUTtZbXqDnfZv3ua5SpqPA==</guid>
+      <link>http://ri.santander.com.br/ShowResultado.aspx?IdResultado=IUTtZbXqDnfZv3ua5SpqPA==</link>
+      <description>&lt;p&gt;
+	&lt;span style="font-size: 10pt"&gt;&lt;span style="color: gray"&gt;&lt;span style="font-family: calibri, sans-serif"&gt;O lucro l&amp;iacute;quido gerencial&amp;sup1; do Santander totalizou R$ 2.864 milh&amp;otilde;es no primeiro semestre de 2014, com redu&amp;ccedil;&amp;atilde;o de 2,2% em doze meses e aumento de 0,6% no trimestre. &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+</description>
+      <pubDate>Tue, 01 Apr 2014 00:00:00 GMT</pubDate>
+    </item>
 	</channel>
 </rss>
