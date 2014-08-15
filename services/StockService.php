@@ -1,20 +1,7 @@
 <?php 
-class StockService
+class StockService extends Service
 {
-	protected $cache;
-	protected $logger;
 	protected $params;
-
-	public function __construct() {
-		phpFastCache::setup("storage","files");
-		$this->cache = phpFastCache();
-		$handler = new \Monolog\Handler\RotatingFileHandler(dirname(__DIR__).'/logs/stock.log');   
-		$this->logger = new \Monolog\Logger('services.stock', [$handler]); 
-	}
-
-	function slug($string) {
-		return preg_replace(array('/[^a-z0-9]/', '/-{2,}/'), '-', strtolower($string));
-	}
 
 	function call($url) {
 		$urlKey = $this->slug($url);
@@ -22,7 +9,7 @@ class StockService
 		$errorMessage = '';
 		try {
 			$response = $this->request($url);
-			$this->cache->set($urlKey, $response, 60 * 15);//15 minutes
+			$this->cache->set($urlKey, $response, CACHE_TIME);//15 minutes
 		} catch (Exception $e) {
 			$response = $this->cache->get($urlKey);
 			$errorMessage = $e->getMessage();
@@ -36,23 +23,6 @@ class StockService
 			throw new Exception($errorMessage);
 		}
 		return $response;
-	}
-
-	function request($feed_url) {
-		$this->logger->addInfo('making request to: ', ['url' => $feed_url]);
-		$opts = array("http" =>
-			array(
-				"timeout" => 1 // seconds
-			)
-		);
-		$context  = stream_context_create($opts);
-		if (!$xml = file_get_contents($feed_url, false, $context)) {
-			$error = error_get_last();
-			throw new Exception("Cannot access external stock service.</br>Error was: ".$error["message"]
-				."</br>Response Header[0]: ".$http_response_header[0]);
-		} else {
-			return $xml;
-		}
 	}
 
 	function help() {

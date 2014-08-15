@@ -1,9 +1,8 @@
 <?php
+require_once "services/Service.php";
 require_once 'services/RedirectService.php'; //TODO use autoload
 
-$environment = getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'prod';
-
-switch ($environment) {
+switch (APP_ENV) {
 	case "dev":
 		$sitebuilder = 'http://mobi.com';
 	  $cacheTime = 1;	//seconds
@@ -22,4 +21,5 @@ switch ($environment) {
 define('SITE_BUILDER', $sitebuilder);
 define('CACHE_TIME', $cacheTime);
 define('CACHE_PATH', APP_ROOT . '/tmp/cache/redirect');
+define('REQUEST_TIMEOUT', 10);
 ini_set('display_errors', 'On');

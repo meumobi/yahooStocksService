@@ -45,7 +45,7 @@ class Service
 		$this->logger->addInfo('making request to: ', ['url' => $feed_url]);
 		$opts = array("http" =>
 			array(
-				"timeout" => 0 // seconds
+				"timeout" => REQUEST_TIMEOUT // seconds
 			)
 		);
 		$context  = stream_context_create($opts);
