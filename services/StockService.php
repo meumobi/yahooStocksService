@@ -13,7 +13,7 @@ class StockService extends Service
 		} catch (Exception $e) {
 			$response = $this->cache->get($urlKey);
 			$errorMessage = $e->getMessage();
-			$this->logger->error('events update error', [
+			$this->logger->error('stock error', [
 				'exception' => get_class($e),
 				'message' => $e->getMessage(),
 				'trace' => $e->getTraceAsString()]);
