@@ -66,20 +66,15 @@ class StockService extends Service
 	}
 
 	function enfoquify($profile="santander") {
+		$profiles = json_decode(PROFILES, true);
+		$params = [
+			'Ativos' => $profiles[$profile]['codes'],
+			'Login' => $profiles[$profile]['login'],
+			'Senha' => $profiles[$profile]['password']
+		];	
 
-		$BASE_URL = 'http://webservice.enfoque.com.br/wsbancosantander/cotacoes.asmx/Tabela';	
-
-		$profiles['santander'] = array (
-			'login' => 'BancoSantander', 
-			'password' => 'cotacoes2013',
-			'codes' => 'SANB11,SANB3,SANB4,BSBR,DOLCOM,IBOV'
-		);
-
-		$feed_url = $BASE_URL . '?'
-			. 'Ativos=' . urlencode($profiles['santander']['codes'])
-			. '&Login=' . urlencode($profiles['santander']['login'])
-			. '&Senha=' . urlencode($profiles['santander']['password']);	
-
+		$feed_url = ENFOQUE_URL . '?' . http_build_query($params);
+		
 		$xml = $this->call($feed_url);
 		$json = $this->convertEnfoqueToYahoo($xml);
 
@@ -87,13 +82,11 @@ class StockService extends Service
 	}
 
 	function yahoofy() {
-		$BASE_URL = 'https://query.yahooapis.com/v1/public/yql';
-
 		if (isset($this->params['codes'])) {
 			// Form YQL query and build URI to YQL Web service
 			$codes = $this->params['codes'];
 			$yql_query = "select * from yahoo.finance.quotes where symbol in ('$codes')";
-			$yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) 
+			$yql_query_url = YAHOO_URL . "?q=" . urlencode($yql_query) 
 				. "&format=json"
 				. "&env=http%3A%2F%2Fdatatables.org%2Falltables.env";
 
