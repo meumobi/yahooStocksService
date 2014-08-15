@@ -3,6 +3,7 @@ class StockService
 {
 	protected $cache;
 	protected $logger;
+	protected $params;
 
 	public function __construct() {
 		phpFastCache::setup("storage","files");
@@ -118,9 +119,9 @@ class StockService
 	function yahoofy() {
 		$BASE_URL = 'https://query.yahooapis.com/v1/public/yql';
 
-		if (isset($_GET['codes'])) {
+		if (isset($this->params['codes'])) {
 			// Form YQL query and build URI to YQL Web service
-			$codes = $_GET['codes'];
+			$codes = $this->params['codes'];
 			$yql_query = "select * from yahoo.finance.quotes where symbol in ('$codes')";
 			$yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) 
 				. "&format=json"
@@ -134,12 +135,13 @@ class StockService
 		}
 	}
 
-	function run($action) {
+	function run($action, $params) {
 		try {
 			if($action && method_exists($this, $action)) {
+				$this->params = $params;
 				$start_time = microtime(true);
 				$stats['action'] = $action;
-				$stats['parameters'] = $_GET;//TODO pass parameters to service instead get from GLOBAL $_GET
+				$stats['parameters'] = $params;
 				$this->$action();
 				$stats['elapsed_time'] = microtime(true) - $start_time;
 				$this->logger->info('finished stock action', $stats);

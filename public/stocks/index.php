@@ -4,6 +4,6 @@ require_once 'services/StockService.php';
 
 ini_set('display_errors', 'Off');
 
-$action = isset($_GET['action']) ? $_GET['action'] : null;
+$action = @$_GET['action'];
 $stockService = new StockService();
-$stockService->run($action);
+$stockService->run($action, $_GET);
