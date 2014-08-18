@@ -12,7 +12,7 @@ class Service
 			"path" => CACHE_PATH
 		]);
 		$this->cache = phpFastCache();
-		$handler = new \Monolog\Handler\RotatingFileHandler(dirname(__DIR__) . $this->logPath);   
+		$handler = new \Monolog\Handler\RotatingFileHandler(dirname(__DIR__) . $this->logPath, null, LOG_LEVEL);   
 		$this->logger = new \Monolog\Logger(__CLASS__, [$handler]); 
 	}
 

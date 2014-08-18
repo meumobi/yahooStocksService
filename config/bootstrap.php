@@ -1,4 +1,5 @@
 <?php
+use Monolog\Logger; 
 define('APP_ROOT', dirname(__DIR__));
 define('APP_ENV', getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'prod');
 
@@ -11,13 +12,17 @@ require_once 'libs/phpfastcache/phpfastcache.php';
 switch (APP_ENV) {
 	case "dev":
 		ini_set('display_errors', 'On');
+		$logLevel = Logger::DEBUG; 
 		break;
 	case "int":
 		ini_set('display_errors', 'Off');
+		$logLevel = Logger::INFO; 
 		break;
 	case "prod":
 		ini_set('display_errors', 'Off');
+		$logLevel = Logger::ERROR; 
 	default:
 		break;
 }
 
+define('LOG_LEVEL', $logLevel);
