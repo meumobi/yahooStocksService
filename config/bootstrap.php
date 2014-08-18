@@ -19,9 +19,9 @@ switch (APP_ENV) {
 		$logLevel = Logger::INFO; 
 		break;
 	case "prod":
+	default:
 		ini_set('display_errors', 'Off');
 		$logLevel = Logger::ERROR; 
-	default:
 		break;
 }
 
