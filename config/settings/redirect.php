@@ -11,6 +11,10 @@ switch (APP_ENV) {
 	  $cacheTime = 259200;	//3 days in seconds
 		$sitebuilder = 'http://int-meumobi.com';
 		break;
+	case "rimobi":
+	  $cacheTime = 259200;	//3 days in seconds
+		$sitebuilder = 'http://int-meumobilesite.com';
+		break;
 	case "prod":
 	default:
 	  $cacheTime = 259200;	//3 days in seconds

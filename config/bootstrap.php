@@ -18,6 +18,10 @@ switch (APP_ENV) {
 		ini_set('display_errors', 'Off');
 		$logLevel = Logger::INFO; 
 		break;
+	case "rimobi":
+		ini_set('display_errors', 'Off');
+		$logLevel = Logger::ERROR; 
+		break;
 	case "prod":
 	default:
 		ini_set('display_errors', 'Off');
