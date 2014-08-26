@@ -5,7 +5,7 @@
   <title></title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
-  <script type="text/javascript" src="redirect.js"></script>
+  <script type="text/javascript" src="/static/redirect.js"></script>
 
   <script>
   var app = angular.module('app', []);
@@ -33,23 +33,30 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4  col-md-offset-4">
+        <h2>Redirect Usage</h2>
+        <p class="small">
+        Usage: <a href="http://services.int-meumobi.com/redirect/?domain=satander.int-meumobi.com&url=http://www.180back.com/surf/breves-surf/rip-curl-gromsearch-2014-a-anglet-la-video-16112/">/redirect/?domain={DOMAIN}&url={URL}</a>
+        <br>
+        <br>
+        Example: http://services.int-meumobi.com/redirect/?domain=satander.int-meumobi.com&url=http://www.180back.com/surf/breves-surf/rip-curl-gromsearch-2014-a-anglet-la-video-16112/
+	      </p>
         <h2>Redirect test</h2>
         <form role="form" ng-submit="redirect(redirectFields)">
           <div class="form-group">
             <input type="text" class="form-control" ng-model="redirectFields.mobileUrl" placeholder="Mobile url">
-            <span class="help-block">http://santander.int-meumobi.com</span>
+            <span class="help-block small">http://santander.int-meumobi.com</span>
           </div>
           <div class="form-group">
             <input type="text" class="form-control" ng-model="redirectFields.homeUrl" placeholder="Home url regex">
-            <span class="help-block">\/home|\/index.html</span>
+            <span class="help-block small">\/home|\/index.html</span>
           </div>
           <div class="form-group">
             <input type="text" class="form-control" ng-model="redirectFields.excludeUrl" placeholder="Exclude url regex">
-            <span class="help-block">\/contact|\/documents</span>
+            <span class="help-block small">\/contact|\/documents</span>
           </div>
           <div class="form-group">
             <input type="text" class="form-control" ng-model="redirectFields.currentUrl" placeholder="Current url">
-            <span class="help-block">http://www.180back.com/snowboard/breves-snowboard/shredbots-the-moovie-le-trailer-16656/</span>
+            <span class="help-block small">http://www.180back.com/snowboard/breves-snowboard/shredbots-the-moovie-le-trailer-16656/</span>
           </div>
           <button type="submit" class="btn btn-default">Redirect</button>
         </form>

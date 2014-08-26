@@ -36,9 +36,7 @@ class RedirectService extends Service
 	}
 
 	public function help() {
-		echo '<pre>
-Usage:<a href="/redirect/?domain={DOMAIN}&url={URL}">/redirect/?domain={DOMAIN}&url={URL}</a> 		
-Example: http://services.int-meumobi.com/redirect/?domain=satander.int-meumobi.com&url=http://www.180back.com/surf/breves-surf/rip-curl-gromsearch-2014-a-anglet-la-video-16112/
-			</pre>';	
+		echo file_get_contents('public/redirect/help.html', FILE_USE_INCLUDE_PATH);	
+		exit;
 	}
 }
