@@ -22,27 +22,22 @@ Redirect.isExcluded = function(excludePath) {
 function RedirectToMeuMobi(mobileUrl, homePath, excludePath, currentUrl) {
   try {
     if (currentUrl)
-      Redirect.currentUrl = currentUrl;
+    Redirect.currentUrl = currentUrl;
     var isMobile = Redirect.isMobile();
     var isHome = Redirect.isHome(homePath);
     var isExcluded = Redirect.isExcluded(excludePath);
-    var isRedirectRequest = document.cookie.indexOf('is_service_request=true') >= 0;
     var serviceUrl = 'http://services.int-meumobi.com/redirect/?domain='+mobileUrl.split('/')[2]+'&url=' + Redirect.currentUrl;
     var noRedirectStr = 'no_redirect=true';
-    var noRedirect = location.search.indexOf(noRedirectStr) >= 0 || document.cookie.indexOf(noRedirectStr) >= 0 || isRedirectRequest;
+    var noRedirect = location.search.indexOf(noRedirectStr) >= 0 || document.cookie.indexOf(noRedirectStr) >= 0;
 
     console.log('is mobile: '+ isMobile);
     console.log('is home: ' + isHome);
     console.log('is excluded: ' + isExcluded);
-    console.log('is from redirect request: ' + isRedirectRequest);
     console.log('no redirect: ' + noRedirect);
     
     //add no redirect to cookie
     if(noRedirect && !currentUrl)
       document.cookie = noRedirectStr;
-
-    if(isRedirectRequest)
-      document.cookie = 'is_service_request=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 
     //stop if not to redirect
     if(noRedirect || isExcluded || !isMobile || document.getElementById("dmRoot"))
@@ -51,7 +46,7 @@ function RedirectToMeuMobi(mobileUrl, homePath, excludePath, currentUrl) {
     if(isHome)
       location.replace(mobileUrl);
     else {
-      document.cookie = 'is_service_request=true';
+      document.cookie = noRedirect;
       location.replace(serviceUrl);
     }
   } catch(err) {
