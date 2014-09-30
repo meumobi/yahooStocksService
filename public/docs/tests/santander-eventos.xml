@@ -1,25 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <events>
   <event id="2879">
-    <title>Test time -1T13</title>
-    <start_date>2014-09-19 00:00:00</start_date>
-    <end_date>2014-09-19T00:00</end_date>
+    <title>2014-10-22 00:00:00</title>
+    <start_date>2014-10-22 00:00:00</start_date>
+    <end_date>2014-10-22 00:00:00</end_date>
     <where>Othon Palace</where>
     <description><![CDATA[Referentes ao 4º trimestre <br> de 2011 de 16/01/2012 a 30/01/2012]]></description>
   </event>
-  <event id="2883">
-    <title>Divulgação y &amp; Resultados- 2T13</title>
-    <start_date>2014-11-30 00:00-03:00</start_date>
-    <end_date>2014-11-30 23:59-03:00</end_date>
+  <event id="11">
+    <title>2014-10-22 08:30:00</title>
+    <start_date>2014-10-22 08:30:00</start_date>
+    <end_date>2014-10-22 08:30:00</end_date>
+    <where>Othon Palace</where>
+    <description><![CDATA[Referentes ao 4º trimestre <br> de 2011 de 16/01/2012 a 30/01/2012]]></description>
+  </event>
+  <event id="2880">
+    <title>Wed, 22 Oct 2014 00:00:00 -0300</title>
+    <start_date>Wed, 22 Oct 2014 00:00:00 -0300</start_date>
+    <end_date>Wed, 22 Oct 2014 00:00:00 -0300</end_date>
+    <where>Othon Palace</where>
+    <description>Avenida Atlântica, 3.264 – bairro Copacabana CEP: 22070-001 Horário: 16:00 horas (horário de Brasília)</description>
+  </event>
+  <event id="13">
+    <title>Wed, 22 Oct 2014 08:30:00 -0300</title>
+    <start_date>Wed, 22 Oct 2014 08:30:00 -0300</start_date>
+    <end_date>Wed, 22 Oct 2014 08:30:00 -0300</end_date>
+    <where>Othon Palace</where>
+    <description>Avenida Atlântica, 3.264 – bairro Copacabana CEP: 22070-001 Horário: 16:00 horas (horário de Brasília)</description>
+  </event>
+  <event id="14">
+    <title>2014-10-22T00:00-03:00</title>
+    <start_date>2014-10-22T00:00-03:00</start_date>
+    <end_date>2014-10-22T00:00-03:00</end_date>
     <where />
     <description>Resultados em IFRS e BR GAAP</description>
   </event>
-  <event id="2880">
-    <title>APIMEC Rio de Janeiro/RJ</title>
-    <start_date>2014-10-14 00:00:00</start_date>
-    <end_date>2014-10-14 23:59:00</end_date>
-    <where>Othon Palace</where>
-    <description>Avenida Atlântica, 3.264 – bairro Copacabana CEP: 22070-001 Horário: 16:00 horas (horário de Brasília)</description>
+  <event id="15">
+    <title>2014-10-22T08:30-03:00</title>
+    <start_date>2014-10-22T08:30-03:00</start_date>
+    <end_date>2014-10-22T08:30-03:00</end_date>
+    <where />
+    <description>Resultados em IFRS e BR GAAP</description>
   </event>
   <event id="2881">
     <title>APIME'C Recife/PE</title>
