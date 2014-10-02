@@ -30,7 +30,7 @@ set :ssh_options, {
 # set :linked_files, %w{config/database.yml}
 
 # Default value for linked_dirs is []
-set :linked_dirs, %w{logs tmp/cache/redirect/ tmp/cache/stocks/ public/system}
+set :linked_dirs, %w{logs tmp/cache/redirect/ tmp/cache/stocks/}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
