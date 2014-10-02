@@ -1,4 +1,3 @@
-require 'capistrano/file-permissions'
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
@@ -29,7 +28,7 @@ set :user, 'meumobi'
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w{logs tmp/cache/redirect tmp/cache/stocks}
-set :file_permissions_paths, fetch(:linked_dirs)
+set :file_permissions_paths, fetch(:linked_dirs) #['logs', 'tmp/cache/redirect','tmp/cache/stocks']
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
@@ -56,5 +55,5 @@ namespace :deploy do
     end
   end
   
-  before "deploy:updated", "deploy:set_permissions:chmod"
+  before "deploy:updated", "deploy:permissions:chmod"
 end
