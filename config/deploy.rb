@@ -1,13 +1,11 @@
+require 'capistrano/file-permissions'
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
 set :application, 'services-meumobi'
 set :repo_url, 'git@git-repos.ipanemax.com:/services.meumobi.git'
 set :user, 'meumobi'
-set :ssh_options, {
-  config: false
-    #Other options...
-}
+
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
@@ -30,8 +28,8 @@ set :ssh_options, {
 # set :linked_files, %w{config/database.yml}
 
 # Default value for linked_dirs is []
-set :linked_dirs, %w{logs tmp/cache/redirect/ tmp/cache/stocks/}
-
+set :linked_dirs, %w{logs tmp/cache/redirect tmp/cache/stocks}
+set :file_permissions_paths, fetch(:linked_dirs)
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
@@ -47,7 +45,7 @@ namespace :deploy do
       # execute :touch, release_path.join('tmp/restart.txt')
     end
   end
-
+  
   after :publishing, :restart
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -57,5 +55,6 @@ namespace :deploy do
       # end
     end
   end
-
+  
+  before "deploy:updated", "deploy:set_permissions:chmod"
 end
