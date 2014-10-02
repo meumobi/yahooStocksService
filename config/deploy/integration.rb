@@ -14,8 +14,8 @@ role :app, %w{arpoador.ipanemax.com}
 # This can be used to drop a more detailed server definition into the
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
-
-server 'example.com', user: fetch(:user), roles: %w{app}
+set :password, ask("Integration server password:", nil) #TODO add server name
+server 'arpoador.ipanemax.com', user: fetch(:user), password: fetch(:password), roles: %w{app}
 
 #Deploy path
 set :deploy_to, '/home/meumobi/PROJECTS/services.int-meumobi.com'
