@@ -6,7 +6,7 @@ define('APP_ENV', getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'prod'
 set_include_path(get_include_path() . PATH_SEPARATOR . APP_ROOT);
 
 require_once 'vendor/autoload.php';
-require_once 'libs/phpfastcache/phpfastcache.php';
+require_once 'lib/phpfastcache/phpfastcache.php';
 
 
 switch (APP_ENV) {
