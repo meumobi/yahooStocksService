@@ -36,7 +36,7 @@ set :linked_dirs, %w{logs tmp/cache/redirect/ tmp/cache/stocks/ public/system}
 # set :keep_releases, 5
 
 namespace :deploy do
-=begin
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -54,5 +54,5 @@ namespace :deploy do
       # end
     end
   end
-=end
+
 end
