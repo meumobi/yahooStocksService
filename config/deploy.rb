@@ -35,6 +35,12 @@ set :file_permissions_paths, fetch(:linked_dirs) #['logs', 'tmp/cache/redirect',
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+set :ssh_options, {
+    user: 'meumobi',
+    #auth_methods: %w(password),
+    #verbose: :debug # add this to find exact issue when your deployment fails
+}
+
 namespace :deploy do
 
   desc 'Restart application'
