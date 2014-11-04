@@ -122,6 +122,18 @@
 		<media:content url="http://www.youtube.com/v/74a--whi1-4" type="text/html" medium="document">
 			<media:title>Mick Fanning revient sur sa victoire</media:title>
 		</media:content>
+    <media:content url="http://www.ri.santander.com.br/download.aspx?Arquivo=oZyOmaJ0ZrkyFAlrl3jVTQ==" fileSize="618" type="application/vnd.ms-excel" medium="document">
+        <media:title>BR GAAP - 2T14 - Séries Históricas </media:title>
+      </media:content>
+      <media:content url="http://cielowf.homolog.riweb.com.br/Download.aspx?Arquivo=EBeoflqUS0Sry/M9WLNVeQ==" fileSize="618" type="application/pdf" medium="document">
+        <media:title>PDF BR GAs </media:title>
+      </media:content>
+<media:content url="http://cielowf.homolog.riweb.com.br/Download.aspx?Arquivo=0/rxd//2p7HCffFZ4yTu9w==" fileSize="618" type="application/pdf" medium="document">
+        <media:title>PDF 2- 2T14 - Séries Históricas </media:title>
+      </media:content>
+      <media:content url="http://cielowf.homolog.riweb.com.br/Download.aspx?Arquivo=WftQyagSdwWOHdvwaGYIbw==" fileSize="618" type="application/pdf" medium="document">  
+        <media:title>PDF 3 BR GAAP - 2T14 - Séries Históricas </media:title>
+      </media:content>
 		</item>
     <item>
       <title>excel and audio as media:content</title>
