@@ -124,23 +124,20 @@
 		<media:content url="http://www.youtube.com/v/88YkgT7OuPg" type="text/html" medium="document">
 			<media:title>Highlights Final Day : J Bay Open 2014</media:title>
 		</media:content>
-		<media:content url="http://www.youtube.com/v/YXrLblE7zlE" type="text/html" medium="document">
-			<media:title>J Bay Open 2014 : Perfect 10 pour Parkinson</media:title>
+		<media:content url="http://www.hubharp.com/web_sound/BachGavotteShort.mp3" type="text/html" medium="document">
+			<media:title>Mp3</media:title>
 		</media:content>
-		<media:content url="http://www.youtube.com/v/74a--whi1-4" type="text/html" medium="document">
-			<media:title>Mick Fanning revient sur sa victoire</media:title>
-		</media:content>
-    <media:content url="http://www.ri.santander.com.br/download.aspx?Arquivo=oZyOmaJ0ZrkyFAlrl3jVTQ==" fileSize="618" type="application/vnd.ms-excel" medium="document">
-        <media:title>BR GAAP - 2T14 - Séries Históricas </media:title>
+    <media:content url="http://www.pdfpdf.com/samples/xlsdemo1.xls" fileSize="618" type="application/vnd.ms-excel" medium="document">
+    <media:title>Excel</media:title>
       </media:content>
-      <media:content url="http://cielowf.homolog.riweb.com.br/Download.aspx?Arquivo=EBeoflqUS0Sry/M9WLNVeQ==" fileSize="618" type="application/pdf" medium="document">
-        <media:title>PDF BR GAs </media:title>
+      <media:content url="http://www.pdfpdf.com/samples/Sample4.PDF" fileSize="618" type="application/pdf" medium="document">
+        <media:title>PDF 1</media:title>
       </media:content>
-<media:content url="http://cielowf.homolog.riweb.com.br/Download.aspx?Arquivo=0/rxd//2p7HCffFZ4yTu9w==" fileSize="618" type="application/pdf" medium="document">
-        <media:title>PDF 2- 2T14 - Séries Históricas </media:title>
+      <media:content url="http://www.pdfpdf.com/samples/Sample5.PDF" fileSize="618" type="application/pdf" medium="document">
+        <media:title>PDF 2 </media:title>
       </media:content>
-      <media:content url="http://cielowf.homolog.riweb.com.br/Download.aspx?Arquivo=WftQyagSdwWOHdvwaGYIbw==" fileSize="618" type="application/pdf" medium="document">  
-        <media:title>PDF 3 BR GAAP - 2T14 - Séries Históricas </media:title>
+      <media:content url="http://www.pdfpdf.com/samples/xlsdemo2.pdf" fileSize="618" type="application/pdf" medium="document">  
+        <media:title>PDF 3</media:title>
       </media:content>
 		</item>
     <item>
@@ -155,6 +152,25 @@
       <guid isPermaLink="true">http://ri.santander.com.br/media contents=</guid>
       <link>http://ri.santander.com.br/media contents</link>
       <description></description>
+      <pubDate>Tue, 01 Apr 2014 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Description links and media:content</title>
+      <media:content url="http://www.ri.santander.com.br/download.aspx?Arquivo=oZyOmaJ0ZrkyFAlrl3jVTQ==" fileSize="618" type="application/vnd.ms-excel" medium="document">
+        <media:title>BR GAAP - 2T14 - Séries Históricas </media:title>
+      </media:content>
+      <media:content url="http://www.ri.santander.com.br/download.aspx?Arquivo=mbK33WrlHUwcF+sdPD6K/g==" fileSize="18205" type="audio/mpeg" medium="audio">
+        <media:title>audios_2T14_santander_por_2t14</media:title>
+      </media:content>
+      <media:content url="http://cielowf.homolog.riweb.com.br/Download.aspx?Arquivo=WftQyagSdwWOHdvwaGYIbw==" fileSize="618" type="application/pdf" medium="document">  
+        <media:title>PDF 3 BR GAAP - 2T14 - Séries Históricas </media:title>
+      </media:content>
+      <guid isPermaLink="true">http://ri.santander.com.br/description_links=</guid>
+      <link>http://ri.santander.com.br/description_links</link>
+      <description>
+        <a height="85px" href="http://www.comunique-se.com.br/Download.aspx?Arquivo=43QqjgnnSvH8zoIBr4fGIQ==" target="_blank" width="100px">Clique aqui</a>
+      </description>
       <pubDate>Tue, 01 Apr 2014 00:00:00 GMT</pubDate>
     </item>
 	</channel>
