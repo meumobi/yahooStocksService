@@ -2,6 +2,7 @@
 class StockService extends Service
 {
 	protected $params;
+	protected $quote_fields = array('symbol', 'LastTradePriceOnly', 'StockExchange', 'ChangeinPercent', 'Change', 'DaysHigh','DaysLow','DaysRange','Volume', 'Currency','LastTradeDate','LastTradeTime');
 
 	function call($url) {
 		$urlKey = $this->slug($url);
@@ -81,16 +82,83 @@ class StockService extends Service
 		echo $json;
 	}
 
-	function yahoofy() {
+	// Old yahoofy function using YQL query
+	function yahooYQL() {
 		if (isset($this->params['codes'])) {
 			// Form YQL query and build URI to YQL Web service
 			$codes = $this->params['codes'];
 			$yql_query = "select * from yahoo.finance.quotes where symbol in ('$codes')";
-			$yql_query_url = YAHOO_URL . "?q=" . urlencode($yql_query) 
+			$yql_query_url = YAHOO_YQL_API_URL . "?q=" . urlencode($yql_query) 
 				. "&format=json"
 				. "&env=http%3A%2F%2Fdatatables.org%2Falltables.env";
 
 			$json = $this->call($yql_query_url);
+
+			echo $json;
+		} else {
+			throw new Exception("Codes are missing");
+		}
+	}
+
+	function convertRowToQuote($row) {
+		$quote = array();
+		foreach ($row as $key=>$value) {
+			$quote[$this->quote_fields[$key]] = $value;
+		};
+		return $quote;
+	}
+
+	function convertArrayToYahoo($array) {
+		// If only one row don't use an array on response to be compliant with YQL responses
+		if (count($array) > 1) {
+			$quotes = array();
+			foreach ($array as $row) {
+				$quotes[] = $this->convertRowToQuote($row);
+			}
+		} else {
+			$quotes = $this->convertRowToQuote($array[0]);
+		}
+
+		if (!empty($quotes)) {
+			$results = array (
+				"query" => array (
+					"results" => array (
+						"quote" => $quotes
+					)
+				)
+			); 
+		} else {
+			$results = "Sorry, no quotes matching";
+		}
+		return json_encode($results);
+	}
+	
+	function yahoofy() {
+		switch (YAHOO_API) {
+			case "YQL":
+				$this->yahooYQL();
+				break;
+			case "CSV":
+			default:
+				$this->yahooCSV();
+				break;
+		}
+	}
+	
+	function yahooCSV() {
+		if (isset($this->params['codes'])) {
+			$codes = $this->params['codes'];
+			$csv_query = "'$codes'&f=sl1xp2c1hgmvc4d1t1";
+			$csv_query_url = YAHOO_CSV_API_URL . "?s='$codes'&f=sl1xp2c1hgmvc4d1t1";
+
+			$csv = $this->call($csv_query_url);
+			$this->logger->debug($csv);
+			//remove the very last newline to prevent a 0-field array for the last line
+			 $str = preg_replace('/\n$/', '', $csv);
+			
+			$array = array_map("str_getcsv", explode("\n", $str));
+			
+			$json = $this->convertArrayToYahoo($array);
 
 			echo $json;
 		} else {
