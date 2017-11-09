@@ -4,28 +4,6 @@ class StockService extends Service
 	protected $params;
 	protected $quote_fields = array('symbol', 'LastTradePriceOnly', 'StockExchange', 'ChangeinPercent', 'Change', 'DaysHigh','DaysLow','DaysRange','Volume', 'Currency','LastTradeDate','LastTradeTime');
 
-	function call($url) {
-		$urlKey = $this->slug($url);
-		$response = null;
-		$errorMessage = '';
-		try {
-			$response = $this->request($url);
-			$this->cache->set($urlKey, $response, CACHE_TIME);//15 minutes
-		} catch (Exception $e) {
-			$response = $this->cache->get($urlKey);
-			$errorMessage = $e->getMessage();
-			$this->logger->error('stock error', [
-				'exception' => get_class($e),
-				'message' => $e->getMessage(),
-				'trace' => $e->getTraceAsString()]);
-			$this->logger->info('using cached response: ' . ($response ? 'yes': 'no')); 
-		}
-		if ($response == null) {
-			throw new Exception($errorMessage);
-		}
-		return $response;
-	}
-
 	function help() {
 		echo 'Following Actions are available:</br><ul>'
 			. '<li>enfoquify, using params:profile</li>'
@@ -135,6 +113,9 @@ class StockService extends Service
 	
 	function yahoofy() {
 		switch (YAHOO_API) {
+			case "GOOGLE":
+				$this->googlify();
+				break;
 			case "YQL":
 				$this->yahooYQL();
 				break;
@@ -154,12 +135,45 @@ class StockService extends Service
 			$csv = $this->call($csv_query_url);
 			$this->logger->debug($csv);
 			//remove the very last newline to prevent a 0-field array for the last line
-			 $str = preg_replace('/\n$/', '', $csv);
+			$str = preg_replace('/\n$/', '', $csv);
 			
 			$array = array_map("str_getcsv", explode("\n", $str));
 			
 			$json = $this->convertArrayToYahoo($array);
 
+			echo $json;
+		} else {
+			throw new Exception("Codes are missing");
+		}
+	}
+
+	function googlify() {
+		if (isset($this->params['codes'])) {
+			$csv_url = GOOGLESHEET_CSV_URL;
+			$csv = $this->call($csv_url);
+			$str = preg_replace('/\n$/', '', $csv);
+			$array = array_map("str_getcsv", explode("\n", $csv));
+
+			$quotes = array(); 
+			$quotes_selected = array();
+			array_shift($array);
+			foreach ($array as $row) {
+				//$quote = explode(",", $row);
+				$this->logger->debug('Row', $row);
+				$quotes[$row[0]] = $row;
+			}
+			$this->logger->debug('Stock quotes returned by Google spreadsheet', $quotes);
+
+			$codes = explode(",", $this->params['codes']);
+			$this->logger->debug('Param codes:', $codes);
+			foreach ($codes as $code) {
+				$quotes_selected[] = $quotes[$code];
+			}
+
+			$this->logger->debug('Stock quotes selected', $quotes_selected);
+
+			$json = $this->convertArrayToYahoo($quotes_selected);
+			
 			echo $json;
 		} else {
 			throw new Exception("Codes are missing");
