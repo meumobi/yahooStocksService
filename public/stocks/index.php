@@ -1,3 +1,5 @@
+<?php header('Access-Control-Allow-Origin: *'); ?>
+
 <?php
 require_once dirname(dirname(__DIR__)) . '/config/bootstrap.php';
 require_once 'config/settings/stocks.php';
