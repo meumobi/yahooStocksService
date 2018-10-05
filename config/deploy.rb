@@ -2,8 +2,8 @@
 lock '3.2.1'
 
 set :application, 'services-meumobi'
-set :repo_url, 'git@git-repos.ipanemax.com:/services.meumobi.git'
-set :user, 'meumobi'
+set :repo_url, 'git@github.com/meumobi/yahooStocksService.git'
+set :scm, :git
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -33,7 +33,7 @@ set :file_permissions_paths, fetch(:linked_dirs) #['logs', 'tmp/cache/redirect',
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 2
 
 set :ssh_options, {
     user: 'meumobi',
