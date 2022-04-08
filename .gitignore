@@ -1,2 +1,5 @@
 tmp/cache/stocks
 logs/
+vendor
+log/
+.bundle/
