@@ -17,7 +17,7 @@
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
-role :app, %w{mobi.comunique-se.com.br}
+role :app, %w{riweb-mobi-02}
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
@@ -32,10 +32,10 @@ role :app, %w{mobi.comunique-se.com.br}
 # Feel free to add new variables to customise your setup.
 
 #Deploy path
-set :deploy_to, '/home/meumobi/PROJECTS/stocks.mobi.comunique-se.com.br'
+set :deploy_to, '/home/meumobi/PROJECTS/mmb-service.stock-quotes'
 
 #Php env
-set :php_env, 'riweb-01'
+set :php_env, 'riweb-mobi-02'
 
 # Custom SSH Options
 # ==================

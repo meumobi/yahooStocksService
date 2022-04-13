@@ -32,7 +32,7 @@ role :app, %w{vps-4316bebe.vps.ovh.net}
 # Feel free to add new variables to customise your setup.
 
 #Deploy path
-set :deploy_to, '/home/meumobi/PROJECTS/services.meumobi.com'
+set :deploy_to, '/home/meumobi/PROJECTS/mmb-service.stock-quotes'
 
 #Php env
 set :php_env, 'meumobi-03'
