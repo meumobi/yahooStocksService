@@ -32,7 +32,7 @@ role :app, %w{meumobi-00}
 # Feel free to add new variables to customise your setup.
 
 #Deploy path
-set :deploy_to, '/home/meumobi/PROJECTS/mmb-service.stock-quotes'
+set :deploy_to, '/home/meumobi/PROJECTS/mmb-service.irmobi-stock'
 
 #Php env
 set :php_env, 'meumobi-00'
