@@ -32,12 +32,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt_pbkdf
-  capistrano
-  capistrano-bundler
+  bcrypt_pbkdf (>= 1.0, < 2.0)
+  capistrano (= 3.17)
+  capistrano-bundler (~> 2.0)
   capistrano-file-permissions
   capistrano-rvm
-  ed25519
+  ed25519 (>= 1.2, < 2.0)
 
 BUNDLED WITH
    1.17.2
