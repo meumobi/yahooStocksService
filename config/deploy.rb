@@ -2,7 +2,7 @@
 lock "~> 3.17.0"
 
 set :application, "yahooStocksService"
-set :repo_url, 'git@github.com:meumobi/yahooStocksService.git'
+set :repo_url, 'git@repo-irmobi-stock:meumobi/yahooStocksService.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
